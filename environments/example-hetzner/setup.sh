@@ -18,14 +18,11 @@ EXTRA_VARS="{ \"swarmsible_vars_path\": \"$(realpath vars)\", \"CWD\": \"$(pwd)\
 # ansible-playbook -i inventory/ ./swarmsible/swarmsible-hetzner/swarmsible-hetzner/setup.yml --extra-vars="$EXTRA_VARS"
 # check_result "failed to setup hetzner nodes"
 
-ansible-playbook -i inventory ./swarmsible/swarmsible/swarmsible/ansible_setup.yml --extra-vars="$EXTRA_VARS"
-check_result "failed to run ansible_setup"
+# ansible-playbook -i inventory ./swarmsible/swarmsible/swarmsible/ansible_setup.yml --extra-vars="$EXTRA_VARS"
+# check_result "failed to run ansible_setup"
 
-# ansible-playbook -i inventory ./swarmsible/swarmsible/swarmsible/docker_swarm_volumes.yml --extra-vars="$EXTRA_VARS"
-# check_result "failed to run docker_swarm_volumes"
+ansible-playbook -i inventory ./swarmsible/swarmsible/swarmsible/docker_swarm.yml --extra-vars="$EXTRA_VARS"
+check_result "failed to run docker_swarm"
 
-# ansible-playbook -i inventory ./swarmsible/swarmsible/swarmsible/docker_swarm.yml --extra-vars="$EXTRA_VARS"
-# check_result "failed to run docker_swarm"
-
-# ansible-playbook -i inventory ./swarmsible/swarmsible/swarmsible/developer_accounts.yml --extra-vars="$EXTRA_VARS"
-# check_result "failed to run developer_accounts"
+ansible-playbook -i inventory ./swarmsible/swarmsible/swarmsible/developer_accounts.yml --extra-vars="$EXTRA_VARS"
+check_result "failed to run developer_accounts"
