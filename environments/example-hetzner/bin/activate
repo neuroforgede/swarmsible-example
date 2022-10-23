@@ -1,7 +1,11 @@
-export DOCKER_HOST=ssh://<user>@ip1
+#!/bin/bash
+
+MANAGER_IP=$(HCLOUD_TOKEN=$(yq -r .hcloud_token vars/hcloud_token.yml) ansible-inventory -i inventory/ --list | yq -r '._meta.hostvars."manager-1".ipv4')
+
+export DOCKER_HOST=ssh://$(whoami)@$MANAGER_IP
 ORIG_PS1="$PS1"
 
-PS1="[docker@ssh://<user>@ip1]$PS1"
+PS1="[docker@ssh://$(whoami)@$MANAGER_IP]$PS1"
 
 function deactivate () {
     unset DOCKER_HOST

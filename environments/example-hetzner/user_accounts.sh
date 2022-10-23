@@ -8,5 +8,12 @@ check_result () {
     fi
 }
 
-ansible-playbook -i inventory/hosts.yml ../../../swarmsible/developer_accounts.yml
+source venv/bin/activate
+
+set -a
+export HCLOUD_TOKEN=$(yq -r .hcloud_token vars/hcloud_token.yml)
+
+EXTRA_VARS="{ \"swarmsible_vars_path\": \"$(realpath vars)\", \"CWD\": \"$(pwd)\" }"
+
+ansible-playbook -i inventory ./swarmsible/swarmsible/swarmsible/developer_accounts.yml --extra-vars="$EXTRA_VARS"
 check_result "failed to run developer_accounts"

@@ -8,5 +8,12 @@ check_result () {
     fi
 }
 
-ansible-playbook -i inventory/hosts.yml ../../../swarmsible/docker_swarm_firewall.yml
+source venv/bin/activate
+
+set -a
+export HCLOUD_TOKEN=$(yq -r .hcloud_token vars/hcloud_token.yml)
+
+EXTRA_VARS="{ \"swarmsible_vars_path\": \"$(realpath vars)\", \"CWD\": \"$(pwd)\" }"
+
+ansible-playbook -i inventory ./swarmsible/swarmsible/swarmsible/docker_swarm_firewall.yml --extra-vars="$EXTRA_VARS"
 check_result "failed to run docker_swarm_volumes"
