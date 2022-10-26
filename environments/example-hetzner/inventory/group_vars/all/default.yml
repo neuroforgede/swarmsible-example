@@ -1,4 +1,4 @@
-# CAREFUL: might be insecure
+# CAREFUL: insecure
 ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
 
 project_base_dir: "{{ CWD }}"

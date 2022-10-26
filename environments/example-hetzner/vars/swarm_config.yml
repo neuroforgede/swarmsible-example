@@ -8,6 +8,14 @@ swarmsible_hetzner_server_image: ubuntu-22.04
 swarmsible_hetzner_server_location: nbg1
 
 swarmsible_hetzner_loadbalancer_type: lb11
+swarmsible_hetzner_loadbalancer_dns_A:
+  - zone: nfcompose-cloud.de
+    record: "*.mytest-swarm.nfcompose-cloud.de"
+    ttl: "7200"
+swarmsible_hetzner_loadbalancer_dns_AAAA:
+  - zone: nfcompose-cloud.de
+    record: "*.mytest-swarm.nfcompose-cloud.de"
+    ttl: "7200"
 swarmsible_hetzner_loadbalancer_certificate_name: "swarmlb-certs"
 swarmsible_hetzner_loadbalancer_certificate_domain_names: 
   - "*.mytest-swarm.nfcompose-cloud.de"
