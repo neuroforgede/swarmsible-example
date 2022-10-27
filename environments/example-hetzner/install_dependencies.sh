@@ -11,5 +11,5 @@ ansible-galaxy collection install hetzner.hcloud:==1.8.2
 rm -rf swarmsible
 mkdir -p swarmsible
 cd swarmsible
-git clone https://github.com/neuroforgede/swarmsible.git
-git clone https://github.com/neuroforgede/swarmsible-hetzner.git
+git clone --single-branch --branch 22.10.0.beta https://github.com/neuroforgede/swarmsible.git
+git clone --single-branch --branch 22.10.0.beta https://github.com/neuroforgede/swarmsible-hetzner.git
