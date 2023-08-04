@@ -1,14 +1,16 @@
 swarmsible_hetzner_manager_count: 3
-swarmsible_hetzner_manager_server_type: cx21
+swarmsible_hetzner_manager_server_type: cpx21
+# swarmsible_hetzner_manager_server_type: cax21
 
-swarmsible_hetzner_worker_count: 5
-swarmsible_hetzner_worker_server_type: cx21
+swarmsible_hetzner_worker_count: 0
+swarmsible_hetzner_worker_server_type: cpx21
+# swarmsible_hetzner_worker_server_type: cax21
 
 swarmsible_hetzner_manager_name_prefix: "manager-"
 swarmsible_hetzner_worker_name_prefix: "worker-"
 
-swarmsible_hetzner_server_image: ubuntu-20.04
-swarmsible_hetzner_server_location: nbg1
+swarmsible_hetzner_server_image: ubuntu-22.04
+swarmsible_hetzner_server_location: fsn1
 
 swarmsible_hetzner_loadbalancer_type: lb11
 swarmsible_hetzner_loadbalancer_dns_A:
