@@ -10,8 +10,6 @@ check_result () {
     fi
 }
 
-source venv/bin/activate
-
 # list services
 DOCKER_SERVICES=$(docker service ls -q)
 
