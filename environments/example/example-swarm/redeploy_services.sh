@@ -10,7 +10,7 @@ check_result () {
     fi
 }
 
-source ../../nf_swarm-venv/bin/activate
+source venv/bin/activate
 
 # list services
 DOCKER_SERVICES=$(docker service ls -q)
