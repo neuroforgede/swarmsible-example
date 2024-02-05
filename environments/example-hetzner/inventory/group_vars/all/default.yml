@@ -22,7 +22,7 @@ docker_sysctl_settings:
     value: '1'
 
 docker_swarm_main_manager: "{{ groups['docker_swarm_manager'] | first }}"
-docker_swarm_ingress_subnet: "10.0.0.1/16"
+docker_swarm_ingress_subnet: "10.0.0.0/16"
 docker_swarm_ingress_network_name: "ingress"
 
 # we have things in a private network anyways
