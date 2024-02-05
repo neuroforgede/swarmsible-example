@@ -9,7 +9,7 @@ docker_pinned_package: '*'
 containerd_pinned_package: '*'
 
 docker_swarm_main_manager: example-swarm-example-01
-docker_swarm_ingress_subnet: "10.0.0.1/16"
+docker_swarm_ingress_subnet: "10.0.0.0/16"
 docker_swarm_ingress_network_name: "ingress"
 
 docker_registry_client_credentials: []
